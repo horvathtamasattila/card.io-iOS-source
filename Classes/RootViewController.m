@@ -77,7 +77,7 @@
 }
 
 - (IBAction)scan {
-  CardIOPaymentViewController *paymentVC = [[CardIOPaymentViewController alloc] initWithPaymentDelegate:self scanningEnabled:!self.manualSwitch.on];
+  CardIOPaymentViewController *paymentVC = [[CardIOPaymentViewController alloc] initWithPaymentDelegate:self scanningEnabled:!self.manualSwitch.on preferredDevicePosition:AVCaptureDevicePositionUnspecified];
   paymentVC.collectExpiry = self.expirySwitch.on;
   paymentVC.collectCVV = self.cvvSwitch.on;
   paymentVC.collectPostalCode = self.zipSwitch.on;
