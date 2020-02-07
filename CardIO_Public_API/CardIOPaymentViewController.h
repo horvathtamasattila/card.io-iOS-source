@@ -6,10 +6,13 @@
 #import <UIKit/UIKit.h>
 #import "CardIOPaymentViewControllerDelegate.h"
 #import "CardIODetectionMode.h"
+#import <AVFoundation/AVCaptureDevice.h>
 
 /// CardIOPaymentViewController is one of two main entry points into the card.io SDK.
 /// @see CardIOView
 @interface CardIOPaymentViewController : UINavigationController
+
+- (id)initWithPaymentDelegate:(id<CardIOPaymentViewControllerDelegate>)aDelegate scanningEnabled:(BOOL)scanningEnabled preferredDevicePosition:(AVCaptureDevicePosition)preferredDevicePosition;
 
 /// Initializer for scanning.
 /// If scanning is not supported by the user's device, card.io will offer manual entry.

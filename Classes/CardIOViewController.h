@@ -8,6 +8,7 @@
 #import <UIKit/UIKit.h>
 
 #import <AudioToolbox/AudioServices.h>
+#import <AVFoundation/AVCaptureDevice.h>
 
 @class CardIOContext;
 
@@ -16,6 +17,7 @@
 - (id)init;
 
 @property(nonatomic, strong, readwrite) CardIOContext *context;
+@property(nonatomic, assign, readwrite) AVCaptureDevicePosition preferredDevicePosition;
 
 @end
 

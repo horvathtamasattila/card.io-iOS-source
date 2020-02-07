@@ -95,7 +95,7 @@
   CGRect cardIOViewFrame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
   cardIOViewFrame = CGRectRoundedToNearestPixel(cardIOViewFrame);
   self.cardIOView = [[CardIOView alloc] initWithFrame:cardIOViewFrame];
-
+  self.cardIOView.preferredDevicePosition = self.preferredDevicePosition;
   self.cardIOView.delegate = self;
   self.cardIOView.languageOrLocale = self.context.languageOrLocale;
   self.cardIOView.useCardIOLogo = self.context.useCardIOLogo;

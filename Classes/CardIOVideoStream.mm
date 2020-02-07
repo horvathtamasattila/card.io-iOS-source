@@ -179,6 +179,12 @@
 
 @implementation CardIOVideoStream
 
+- (AVCaptureDevice *)cameraWithPosition: (AVCaptureDevicePosition)position {
+    return [AVCaptureDeviceDiscoverySession discoverySessionWithDeviceTypes:@[ AVCaptureDeviceTypeBuiltInWideAngleCamera ]
+                                                                  mediaType:AVMediaTypeVideo
+                                                                   position:position].devices.firstObject;
+}
+
 - (id)init {
   if((self = [super init])) {
     _interfaceOrientation = (UIInterfaceOrientation)UIDeviceOrientationUnknown;
@@ -186,7 +192,26 @@
     _cameraConfigurationSemaphore = dispatch_semaphore_create(1); // parameter of `1` implies "allow access to only one thread at a time"
 #if USE_CAMERA
     _captureSession = [[AVCaptureSession alloc] init];
-    _camera = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    _camera = [self cameraWithPosition: AVCaptureDevicePositionUnspecified];
+    _previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:self.captureSession];
+    dmz = dmz_context_create();
+#elif SIMULATE_CAMERA
+    _previewLayer = [SimulatedCameraLayer layer];
+#endif
+  }
+  return self;
+}
+
+
+- (id)initWithCameraPosition:(AVCaptureDevicePosition )cameraPosition {
+  if((self = [super init])) {
+    
+    _interfaceOrientation = (UIInterfaceOrientation)UIDeviceOrientationUnknown;
+    _scanner = [[CardIOCardScanner alloc] init];
+    _cameraConfigurationSemaphore = dispatch_semaphore_create(1); // parameter of `1` implies "allow access to only one thread at a time"
+#if USE_CAMERA
+    _captureSession = [[AVCaptureSession alloc] init];
+    _camera = [self cameraWithPosition: cameraPosition];
     _previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:self.captureSession];
     dmz = dmz_context_create();
 #elif SIMULATE_CAMERA

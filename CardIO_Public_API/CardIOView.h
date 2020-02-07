@@ -6,6 +6,7 @@
 #import <UIKit/UIKit.h>
 #import "CardIOViewDelegate.h"
 #import "CardIODetectionMode.h"
+#import <AVFoundation/AVCaptureDevice.h>
 
 /// CardIOView is one of two main entry points into the card.io SDK.
 /// @see CardIOPaymentViewController
@@ -19,6 +20,8 @@
 
 
 #pragma mark - Properties you MAY set
+
+@property(nonatomic, assign, readwrite) AVCaptureDevicePosition preferredDevicePosition;
 
 /// The preferred language for all strings appearing in the user interface.
 /// If not set, or if set to nil, defaults to the device's current language setting.

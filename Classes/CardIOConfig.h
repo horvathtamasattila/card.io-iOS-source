@@ -6,6 +6,7 @@
 #import <Foundation/Foundation.h>
 #import "CardIOAnalytics.h"
 #import "CardIODetectionMode.h"
+#import <AVFoundation/AVCaptureDevice.h>
 
 @interface CardIOConfig : NSObject
 @property(nonatomic, strong, readwrite) CardIOAnalytics *scanReport;
@@ -19,6 +20,7 @@
 @property(nonatomic, copy, readwrite)   NSString *scanInstructions;
 @property(nonatomic, assign, readwrite) BOOL hideCardIOLogo;
 @property(nonatomic, retain, readwrite) UIView *scanOverlayView;
+@property(nonatomic, assign, readwrite) AVCaptureDevicePosition preferredDevicePosition;
 
 @property(nonatomic, assign, readwrite) CardIODetectionMode detectionMode;
 @end

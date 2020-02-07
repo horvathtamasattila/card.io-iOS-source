@@ -47,6 +47,11 @@
   return [self initWithPaymentDelegate:aDelegate scanningEnabled:YES];
 }
 
+- (id)initWithPaymentDelegate:(id<CardIOPaymentViewControllerDelegate>)aDelegate scanningEnabled:(BOOL)scanningEnabled preferredDevicePosition:(AVCaptureDevicePosition)preferredDevicePosition {
+    _preferredDevicePosition = preferredDevicePosition;
+  return [self initWithPaymentDelegate:aDelegate scanningEnabled:scanningEnabled];
+}
+
 - (id)initWithPaymentDelegate:(id<CardIOPaymentViewControllerDelegate>)aDelegate scanningEnabled:(BOOL)scanningEnabled {
 #if CARDIO_DEBUG
   static dispatch_once_t onceToken;
@@ -82,6 +87,7 @@
 #if USE_CAMERA || SIMULATE_CAMERA
     if(!self.currentViewControllerIsDataEntry) {
       CardIOViewController *cameraVC = (CardIOViewController *)viewController;
+      cameraVC.preferredDevicePosition = self.preferredDevicePosition;
       cameraVC.context = self.context;
     }
 #endif

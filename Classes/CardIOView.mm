@@ -148,6 +148,7 @@ NSString * const CardIOScanningOrientationAnimationDuration = @"CardIOScanningOr
       return;
     }
     
+    self.config.preferredDevicePosition = _preferredDevicePosition;
     self.scanHasBeenStarted = YES;
     
     CardIOLog(@"Creating cameraView");

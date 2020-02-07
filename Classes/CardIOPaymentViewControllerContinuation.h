@@ -4,6 +4,7 @@
 //
 
 #import "CardIOPaymentViewController.h"
+#import <AVFoundation/AVCaptureDevice.h>
 
 @class CardIOAnalytics;
 @class CardIOContext;
@@ -22,6 +23,7 @@
 @property(nonatomic, assign, readwrite) BOOL statusBarWasOriginallyHidden;
 
 @property(nonatomic, strong, readwrite) CardIOContext *context;
+@property(nonatomic, assign, readwrite) AVCaptureDevicePosition preferredDevicePosition;
 
 @property(nonatomic, strong, readwrite) UIImageView *obfuscatingView;
 

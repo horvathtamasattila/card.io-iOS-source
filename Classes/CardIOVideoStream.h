@@ -23,6 +23,8 @@
   dmz_context *dmz;
 #endif
 }
+
+- (id)initWithCameraPosition:(AVCaptureDevicePosition )cameraPosition;
 - (void)willAppear;
 - (void)willDisappear;
 
