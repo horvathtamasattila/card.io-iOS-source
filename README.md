@@ -1,3 +1,20 @@
+This is fork of original [card.io](https://github.com/card-io/card.io-iOS-source) iOS library. 
+
+This fork contains additional functionality - possibility to set preferred camera position for `CardIOPaymentViewController`:
+
+```
+CardIOPaymentViewController
+
+- (id)initWithPaymentDelegate:(id<CardIOPaymentViewControllerDelegate>)aDelegate scanningEnabled:(BOOL)scanningEnabled preferredDevicePosition:(AVCaptureDevicePosition)preferredDevicePosition;
+```
+
+
+This source is used for dynamic card.io framework wrapper - https://github.com/verygoodsecurity/CardIOSDK-iOS
+
+
+*Pull requests are welcome!*
+
+
 [![card.io logo](Resources/cardio_logo_220.png "card.io")](https://www.card.io)
 
 Credit card scanning for mobile apps
