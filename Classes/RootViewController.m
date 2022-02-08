@@ -353,6 +353,13 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
 
+  /// Enforce Light mode
+  if (@available(iOS 13.0, *)) {
+      self.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
+  } else {
+    // Fallback on earlier versions
+  }
+  
   self.hideableCardIOView.delegate = self;
 
   self.originalOutcomeLabelWidth = self.outcomeLabel.frame.size.width;

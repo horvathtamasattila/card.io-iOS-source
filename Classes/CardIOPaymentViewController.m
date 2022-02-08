@@ -105,6 +105,12 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  // Enforce light mode.
+  if (@available(iOS 13.0, *)) {
+    self.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
+  } else {
+    // Fallback on earlier versions
+  }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
