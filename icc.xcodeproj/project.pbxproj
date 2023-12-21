@@ -2169,6 +2169,10 @@
 					};
 					92263D6F1B83ACBB003FE678 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 4YLVBXRT45;
+					};
+					A553B6E51BE32273006DF551 = {
+						DevelopmentTeam = 4YLVBXRT45;
 					};
 				};
 			};
@@ -2581,6 +2585,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A50A54BE1BE2FEEC00B669FB /* CardIO_Framework_Debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				DEVELOPMENT_TEAM = 4YLVBXRT45;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lumberlabs.CardIO.tier;
 			};
 			name = Debug;
 		};
@@ -2588,6 +2596,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A50A54BF1BE2FEEC00B669FB /* CardIO_Framework_Release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				DEVELOPMENT_TEAM = 4YLVBXRT45;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lumberlabs.CardIO.tier;
 			};
 			name = Release;
 		};
@@ -2595,6 +2607,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A50A54BD1BE2FEEC00B669FB /* CardIO_Framework_Adhoc.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				DEVELOPMENT_TEAM = 4YLVBXRT45;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lumberlabs.CardIO.tier;
 			};
 			name = AdHoc;
 		};
@@ -2602,6 +2618,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A50A54B41BE2F7A800B669FB /* icc_Debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 4YLVBXRT45;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lumberlabs.demo.tier;
 			};
 			name = Debug;
 		};
@@ -2609,6 +2627,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A50A54B51BE2F7A800B669FB /* icc_Release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 4YLVBXRT45;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lumberlabs.demo.tier;
 			};
 			name = Release;
 		};
@@ -2616,6 +2636,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A50A54B31BE2F7A800B669FB /* icc_AdHoc.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 4YLVBXRT45;
 			};
 			name = AdHoc;
 		};
